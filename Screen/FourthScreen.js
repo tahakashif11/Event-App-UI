@@ -2,45 +2,46 @@ import React from 'react';
 import { StyleSheet, Text, SafeAreaView, TextInput, View, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
-const ThirdScreen = ({Navigation}) => {
+
+const LoginScreen = () => {
   const navigation = useNavigation();
+
   return (
     <SafeAreaView style={styles.container}>
-    
-    <View style={styles.arrowtop}>
-      <Icon name="arrow-left" size={20}/>
+      <View style={styles.textContainer}>
+        <Image
+          source={require('../Assets/yess.png')}
+          style={styles.icon}
+        />
+        <Text style={styles.textPart1}>vent</Text>
+        <Text style={styles.textPart2}>Hub</Text>
       </View>
-      <Text style={styles.signUp}>Sign Up</Text>
-      
+      <Text style={styles.signUp}>Login</Text>
+
       <View style={styles.inputContainer}>
         <View style={styles.inputWithIcon}>
-          <Icon name="user" size={20} color="#807A7A" style={styles.inputIcon} />
-          <TextInput  placeholder='Full Name' />
+          <Icon name="envelope" size={20} color="#807A7A" style={styles.inputIcon} />
+          <TextInput placeholder="Email" />
         </View>
         <View style={styles.inputWithIcon}>
-          <Icon name="envelope" size={20} color="#807A7A"  style={styles.inputIcon} />
-          <TextInput  placeholder='abc@email.com' />
-        </View>
-        <View style={styles.inputWithIcon}>
-          <Icon name="lock" size={20} color="#807A7A"  style={styles.inputIcon} />
-          <TextInput  placeholder='Password' secureTextEntry={true} />
-        </View >
-        <View style={styles.inputWithIcon}>
-          <Icon name="lock" size={20} color="#807A7A"  style={styles.inputIcon} />
-          <TextInput  placeholder='Confirm Password' secureTextEntry={true} />
+          <Icon name="lock" size={20} color="#807A7A" style={styles.inputIcon} />
+          <TextInput placeholder="Password" secureTextEntry={true} />
         </View>
       </View>
-      <View style={{backgroundColor:['#807A7A','white'],flex:1,marginTop:10,paddingBottom:19,}}>
+
+      <View style={{flexDirection:'row',paddingLeft:10}}>
+      <Icon name="toggle-on" size={30} color='blue'/>
+      <Text style={{marginTop:5,paddingLeft:10,color:'black',fontSize:15,fontWeight:'600'}}>Remeber me?</Text>
+      <TouchableOpacity style={{paddingLeft:60}} onPress={()=>navigation.navigate('FifthScreen')}>
+      <Text style={{marginTop:5,paddingLeft:10,color:'black',fontSize:15,fontWeight:'600'}}>Forgot Password?</Text>
+      </TouchableOpacity>
+      </View>
+
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.signupButton}>
-          <Text style={styles.signupText}>Sign Up</Text>
-          <View style={styles.arrowContainer}>
-            <View style={styles.arrowLeft} />
-            <Text style={styles.arrowstyle}>-></Text>
-          </View>
+        <TouchableOpacity style={styles.loginButton}>
+          <Text style={styles.loginText}>Login</Text>
         </TouchableOpacity>
       </View>
-      
       <View style={styles.orContainer}>
         <Text style={styles.orText}>OR</Text>
       </View>
@@ -54,23 +55,24 @@ const ThirdScreen = ({Navigation}) => {
         <Image source={require('../Assets/google.jpg')} style={styles.socialIcon} />
         <Text style={styles.googleText}>Login With Google</Text>
       </TouchableOpacity>
+      
+
       <View style={styles.lastline}>
-        <Text style={{color:'#120D26',fontSize:15}}>Already have an account?</Text>
-        <TouchableOpacity onPress={()=>navigation.navigate('FourthScreen')}>
-        <Text style={{color:'#5669FF',fontSize:15}}>Sign In</Text>
+        <Text style={{ color: '#120D26', fontSize: 15 }}>Don't have an account?</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('ThirdScreen')}>
+          <Text style={{ color: '#5669FF', fontSize: 15 }}>Sign Up</Text>
         </TouchableOpacity>
-      </View>
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
     paddingLeft: 15,
-    paddingBottom:10,
+    paddingBottom: 10,
   },
   signUp: {
     color: '#120D26',
@@ -85,7 +87,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     width: '100%',
     marginTop: 20,
-    paddingRight:20
+    paddingRight: 20,
   },
   inputWithIcon: {
     flexDirection: 'row',
@@ -96,20 +98,10 @@ const styles = StyleSheet.create({
     borderRadius: 19,
     paddingLeft: 10,
   },
-  input: {
-    flex: 1,
-    padding: 10,
-    backgroundColor: 'white',
-    borderRadius: 19,
-    borderWidth: 1,
-    borderColor: '#E4DFDF',
-    marginRight: 10,
-    marginTop: 12,
-  },
   buttonContainer: {
     marginTop: 20,
   },
-  signupButton: {
+  loginButton: {
     width: '70%',
     height: 50,
     backgroundColor: '#5669FF',
@@ -118,18 +110,49 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     shadowColor: '#6F7DC8',
     shadowOffset: { width: 0, height: 10 },
-    paddingRight:35,
+    paddingRight: 35,
     shadowOpacity: 0.25,
     marginLeft: 60,
     position: 'relative',
   },
-  signupText: {
+  loginText: {
     color: 'white',
     fontSize: 16,
     fontFamily: 'Airbnb Cereal App',
     fontWeight: '400',
     textTransform: 'uppercase',
     letterSpacing: 1,
+  },
+  lastline: {
+    flexDirection: 'row',
+    paddingLeft: 60,
+    paddingTop: 29,
+  },
+  textContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop:79,
+    paddingBottom:25
+  },
+  textPart1: {
+    color: '#5669FF',
+    fontSize: 45,
+    fontFamily: 'Airbnb Cereal App',
+    fontWeight: '700',
+    lineHeight: 62.19,
+  },
+  textPart2: {
+    color: '#00F8FF',
+    fontSize: 45,
+    fontFamily: 'Airbnb Cereal App',
+    fontWeight: '700',
+    lineHeight: 62.19,
+  },
+  icon: {
+    width: 56,
+    height: 59,
+    marginHorizontal: 5,
   },
   orContainer: {
     marginTop: 15,
@@ -169,31 +192,6 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     lineHeight: 25,
   },
-  arrowContainer: {
-    position: 'absolute',
-    right: 20, 
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  arrowLeft: {
-    width: 30,
-    height: 30,
-    position: 'absolute',
-    backgroundColor: '#3D56F0',
-    borderRadius: 9999,
-  },
-  arrowstyle: {
-    color: 'white',
-    fontSize: 24,
-  },
-  lastline: {
-    flexDirection: 'row',
-    paddingLeft: 60,
-    paddingTop: 29,
-  },
-  arrowtop:{
-    paddingTop:15
-  }
 });
 
-export default ThirdScreen;
+export default LoginScreen;

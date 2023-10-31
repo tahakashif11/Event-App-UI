@@ -8,7 +8,7 @@ const FirstScreen = () => {
   useEffect(() => {
     const navigateToNextScreen = setTimeout(() => {
       navigation.navigate('SecondScreen');
-    }, 3000);
+    }, 1000);
 
     return () => clearTimeout(navigateToNextScreen);
   }, [navigation]);
