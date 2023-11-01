@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
-
+import SeventhScreen from './SeventhScreen';
 const FifthScreen = () => {
     const navigation = useNavigation();
 
@@ -27,7 +27,7 @@ const FifthScreen = () => {
                     <TextInput style={styles.otpInput} placeholder="-" maxLength={1} keyboardType="numeric" />
                 </View>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('SixthScreen')}>
+                    <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('SeventhScreen')}>
                         <Text style={styles.loginText}>VERIFY</Text>
                     </TouchableOpacity>
                 </View>

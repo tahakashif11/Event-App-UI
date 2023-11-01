@@ -1,96 +1,115 @@
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, TextInput, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, TextInput, View, TouchableOpacity, Image,ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 const ThirdScreen = ({Navigation}) => {
   const navigation = useNavigation();
+
   return (
-    <SafeAreaView style={styles.container}>
     
+    
+    <ImageBackground source={require('../Assets/backie.png')} resizeMode="cover" style={styles.container}>
     <View style={styles.arrowtop}>
-      <Icon name="arrow-left" size={20}/>
+      <Image source={require('../Assets/arrow-left.png')}/>
       </View>
-      <Text style={styles.signUp}>Sign Up</Text>
-      
+      <View style={styles.signUp}>
+      <Image source={require('../Assets/signup.png')}/>
+      </View>
       <View style={styles.inputContainer}>
         <View style={styles.inputWithIcon}>
-          <Icon name="user" size={20} color="#807A7A" style={styles.inputIcon} />
-          <TextInput  placeholder='Full Name' />
+        <Image source={require('../Assets/person.png')}/>
+          <TextInput  placeholder='    Full Name' />
         </View>
         <View style={styles.inputWithIcon}>
-          <Icon name="envelope" size={20} color="#807A7A"  style={styles.inputIcon} />
-          <TextInput  placeholder='abc@email.com' />
+          <Image source={require('../Assets/Message.png')}/>
+          <TextInput  placeholder='   abc@email.com' />
         </View>
         <View style={styles.inputWithIcon}>
-          <Icon name="lock" size={20} color="#807A7A"  style={styles.inputIcon} />
-          <TextInput  placeholder='Password' secureTextEntry={true} />
+          <Image source={require('../Assets/Lock.png')}/>
+          <TextInput  placeholder='    Your Password'/>
+          <View style={{paddingLeft:120}}>  
+        <Image source={require('../Assets/Hidden.png')}/>
+        </View>
         </View >
         <View style={styles.inputWithIcon}>
-          <Icon name="lock" size={20} color="#807A7A"  style={styles.inputIcon} />
-          <TextInput  placeholder='Confirm Password' secureTextEntry={true} />
+        <Image source={require('../Assets/Lock.png')}/>
+          <TextInput  placeholder='     Confirm Password'  />
+        <View style={{paddingLeft:100}}>  
+        <Image source={require('../Assets/Hidden.png')}/>
+        </View>
         </View>
       </View>
-      <View style={{backgroundColor:['#807A7A','white'],flex:1,marginTop:10,paddingBottom:19,}}>
+      
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.signupButton}>
           <Text style={styles.signupText}>Sign Up</Text>
           <View style={styles.arrowContainer}>
-            <View style={styles.arrowLeft} />
-            <Text style={styles.arrowstyle}>-></Text>
+            <Image source={require('../Assets/signuparrowoow.png')}/>
+            
           </View>
         </TouchableOpacity>
-      </View>
+     
       
       <View style={styles.orContainer}>
         <Text style={styles.orText}>OR</Text>
       </View>
-
-      <TouchableOpacity style={styles.facebookButton}>
-        <Image source={require('../Assets/facebook.jpg')} style={styles.socialIcon} />
-        <Text style={styles.googleText}>Login With Facebook</Text>
-      </TouchableOpacity>
-
+      
+      
+      
+      <View style={{paddingBottom:10 }}>
       <TouchableOpacity style={styles.facebookButton}>
         <Image source={require('../Assets/google.jpg')} style={styles.socialIcon} />
-        <Text style={styles.googleText}>Login With Google</Text>
+        <Text style={styles.googleText}>  Login With Google</Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.facebookButton}>
+        <Image source={require('../Assets/facebook.jpg')} style={styles.socialIcon} />
+        <Text style={styles.googleText}>  Login With Facebook</Text>
+      </TouchableOpacity>
+      </View>
       <View style={styles.lastline}>
         <Text style={{color:'#120D26',fontSize:15}}>Already have an account?</Text>
         <TouchableOpacity onPress={()=>navigation.navigate('FourthScreen')}>
-        <Text style={{color:'#5669FF',fontSize:15}}>Sign In</Text>
+        <Text style={{color:'#5669FF',fontSize:15}}>  Sign In</Text>
         </TouchableOpacity>
       </View>
       </View>
-    </SafeAreaView>
+      </ImageBackground>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width:375,
+    height:812,
     backgroundColor: 'white',
-    paddingLeft: 15,
-    paddingBottom:10,
+    paddingLeft: 21,
+    paddingRight:29,
+
   },
   signUp: {
     color: '#120D26',
     fontSize: 24,
     fontFamily: 'Airbnb Cereal App',
     fontWeight: '400',
-    paddingTop: 10,
+    
     textShadowColor: '#000',
     textShadowOffset: { width: 0, height: 2 },
     textShadowRadius: 2,
+    
   },
   inputContainer: {
-    width: '100%',
-    marginTop: 20,
-    paddingRight:20
+    
+    
+    paddingRight:20,
+    background: 'white', borderRadius: 12
   },
   inputWithIcon: {
+    width: 317,
+    height:56,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
+    marginTop:19,
     borderWidth: 1,
     borderColor: '#E4DFDF',
     borderRadius: 19,
@@ -104,24 +123,32 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#E4DFDF',
     marginRight: 10,
-    marginTop: 12,
+    marginTop: 20,
+    marginBottom:19,
+    
   },
   buttonContainer: {
-    marginTop: 20,
+  marginTop:20,
+  marginLeft:26,
+  
+  
+  
+    
   },
   signupButton: {
-    width: '70%',
-    height: 50,
+    width: 271,
+    height: 58,
     backgroundColor: '#5669FF',
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#6F7DC8',
     shadowOffset: { width: 0, height: 10 },
-    paddingRight:35,
+    
     shadowOpacity: 0.25,
-    marginLeft: 60,
+    
     position: 'relative',
+    paddingRight:20,
   },
   signupText: {
     color: 'white',
@@ -132,8 +159,8 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   orContainer: {
-    marginTop: 15,
-    marginLeft: 150,
+    marginTop:40,
+    marginLeft: 120,
   },
   orText: {
     color: '#9D9898',
@@ -143,19 +170,18 @@ const styles = StyleSheet.create({
     lineHeight: 34,
   },
   facebookButton: {
-    width: '80%',
+    width: 273,
     height: 50,
-    backgroundColor: ' #FFF9E9',
-    boxShadow: '15px 0px 30px rgba(210.56, 212.14, 226.38, 0.25)',
+    backgroundColor: 'white',
+    
     borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#E4DFDF',
-    marginLeft: 40,
-    marginTop: 13,
+    
+    borderColor: '#E4DFDF',   
     marginRight: 60,
-    paddingLeft: 10,
+    paddingLeft: 20,
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop:10
   },
   socialIcon: {
     width: 29,
@@ -188,12 +214,12 @@ const styles = StyleSheet.create({
   },
   lastline: {
     flexDirection: 'row',
-    paddingLeft: 60,
-    paddingTop: 29,
+    paddingLeft: 20,
+    paddingTop: 0,
   },
   arrowtop:{
-    paddingTop:15
+    paddingTop:11,
+    paddingBottom:15,
   }
 });
-
 export default ThirdScreen;
