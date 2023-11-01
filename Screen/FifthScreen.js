@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,TextInput,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View,TextInput,TouchableOpacity,Image } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
@@ -7,8 +7,8 @@ const FifthScreen = () => {
   return (
     <View style={styles.container}>
     <View style={styles.arrowtop}>
-    <Icon name="arrow-left" size={30}/>
-    </View>
+      <Image source={require('../Assets/arrow-left.png')}/>
+      </View>
       <View  style={styles.vericontaintext}>
       <Text style={styles.veri}>
       Resset Password
@@ -18,13 +18,17 @@ const FifthScreen = () => {
       </Text>
       </View>
       <View style={styles.inputContainer}>
-        <View style={styles.inputWithIcon}>
-          <Icon name="envelope" size={20} color="#807A7A" style={styles.inputIcon} />
-          <TextInput placeholder="Email" />
-        </View>
+      <View style={styles.inputWithIcon}>
+      <Image source={require('../Assets/Message.png')}/>
+      <TextInput  placeholder='   abc@email.com' />
+    </View>
         <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.loginButton} onPress={()=>navigation.navigate('SixthScreen')}>
           <Text style={styles.loginText}>SEND</Text>
+          <View style={styles.arrowContainer}>
+            <Image source={require('../Assets/signuparrowoow.png')}/>
+            
+          </View>
         </TouchableOpacity>
       </View>
         
@@ -85,17 +89,17 @@ lineHeight: 25,
         marginTop: 20,
       },
       loginButton: {
-        width: '70%',
-        height: 50,
+        width: 271,
+    height: 58,
         backgroundColor: '#5669FF',
         borderRadius: 15,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: '#6F7DC8',
-        shadowOffset: { width: 0, height: 10 },
-        paddingRight: 35,
+       
+        paddingRight: 20,
         shadowOpacity: 0.25,
-        marginLeft: 60,
+        marginLeft: 27,
         position: 'relative',
       },
       loginText: {
@@ -105,5 +109,26 @@ lineHeight: 25,
         fontWeight: '400',
         textTransform: 'uppercase',
         letterSpacing: 1,
+      },
+      arrowContainer: {
+        position: 'absolute',
+        right: 20, 
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      signupButton: {
+        width: 271,
+        height: 58,
+        backgroundColor: '#5669FF',
+        borderRadius: 15,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: '#6F7DC8',
+        shadowOffset: { width: 0, height: 10 },
+        
+        shadowOpacity: 0.25,
+        
+        position: 'relative',
+        paddingRight:20,
       },
 })

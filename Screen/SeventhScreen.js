@@ -21,52 +21,7 @@ function NotificationsScreen({ navigation }) {
   );
 }
 
-function Message({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
 
-function Calendar({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
-function ContactUs({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
-
-function Setting({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
-
-function HelpAndFaqs({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
-
-function Signout({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
 const Drawer = createDrawerNavigator();
 
 function CustomDrawerContent(props) {
@@ -76,7 +31,7 @@ function CustomDrawerContent(props) {
         label={({ focused, color }) => (
           <View >
             <Image
-              source={require('../Assets/topimage.png')}// Replace with the actual path to your image
+              source={require('../Assets/topimage.png')}
               
             />
             <View style={{paddingTop:10}}>
@@ -90,7 +45,7 @@ function CustomDrawerContent(props) {
         label={({ focused, color }) => (
           <View style={styles.drawerItem}>
             <Image
-              source={require('../Assets/person.png')} // Replace with the actual path to your image
+              source={require('../Assets/person.png')} 
               style={styles.icon}
             />
             <Text style={{ color }}>My Profile</Text>
@@ -102,7 +57,7 @@ function CustomDrawerContent(props) {
         label={({ focused, color }) => (
           <View style={styles.drawerItem}>
             <Image
-              source={require('../Assets/messages2.png')}// Replace with the actual path to your image
+              source={require('../Assets/messages2.png')}
               style={styles.icon}
             />
             <Text style={{ color }}>Messages</Text>
@@ -114,7 +69,7 @@ function CustomDrawerContent(props) {
         label={({ focused, color }) => (
           <View style={styles.drawerItem}>
             <Image
-              source={require('../Assets/calendar.png')}// Replace with the actual path to your image
+              source={require('../Assets/calendar.png')}
               style={styles.icon}
             />
             <Text style={{ color }}>calendar</Text>
@@ -126,7 +81,7 @@ function CustomDrawerContent(props) {
         label={({ focused, color }) => (
           <View style={styles.drawerItem}>
             <Image
-              source={require('../Assets/bookmark.png')}// Replace with the actual path to your image
+              source={require('../Assets/bookmark.png')}
               style={styles.icon}
             />
             <Text style={{ color }}>Bookmark</Text>
@@ -138,7 +93,7 @@ function CustomDrawerContent(props) {
         label={({ focused, color }) => (
           <View style={styles.drawerItem}>
             <Image
-              source={require('../Assets/Message.png')}// Replace with the actual path to your image
+              source={require('../Assets/Message.png')}
               style={styles.icon}
             />
             <Text style={{ color }}>ContactUs</Text>
@@ -150,7 +105,7 @@ function CustomDrawerContent(props) {
         label={({ focused, color }) => (
           <View style={styles.drawerItem}>
             <Image
-              source={require('../Assets/setting.png')}// Replace with the actual path to your image
+              source={require('../Assets/setting.png')}
               style={styles.icon}
             />
             <Text style={{ color }}>Setting</Text>
@@ -162,7 +117,7 @@ function CustomDrawerContent(props) {
         label={({ focused, color }) => (
           <View style={styles.drawerItem}>
             <Image
-              source={require('../Assets/faq.png')}// Replace with the actual path to your image
+              source={require('../Assets/faq.png')}
               style={styles.icon}
             />
             <Text style={{ color }}>HelpAndFaqs</Text>
@@ -174,7 +129,7 @@ function CustomDrawerContent(props) {
         label={({ focused, color }) => (
           <View style={styles.drawerItem}>
             <Image
-              source={require('../Assets/signout.png')}// Replace with the actual path to your image
+              source={require('../Assets/signout.png')}
               style={styles.icon}
             />
             <Text style={{ color }}>Signout</Text>
@@ -186,7 +141,7 @@ function CustomDrawerContent(props) {
         label={({ focused, color }) => (
           <View style={{paddingTop:10,}}>
             <Image
-              source={require('../Assets/upgarde.png')}// Replace with the actual path to your image
+              source={require('../Assets/upgarde.png')}
               
             />
             
@@ -218,12 +173,7 @@ export default function SeventhScreen() {
     <Drawer.Navigator initialRouteName="Home" drawerContent={CustomDrawerContent}>
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-      <Drawer.Screen name="Calendar" component={Calendar} />
-      <Drawer.Screen name="Message" component={Message} />
-      <Drawer.Screen name="HelpAndFaqs" component={HelpAndFaqs} />
-      <Drawer.Screen name="ContactUs" component={ContactUs} />
-      <Drawer.Screen name="Setting" component={Setting} />
-      <Drawer.Screen name="Signout" component={Signout} />
+      
 
       
     </Drawer.Navigator>

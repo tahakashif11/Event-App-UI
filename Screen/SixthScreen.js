@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TextInput, TouchableOpacity,Image } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
@@ -8,9 +8,9 @@ const FifthScreen = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.arrowtop}>
-                <Icon name="arrow-left" size={30}/>
-            </View>
+        <View style={styles.arrowtop}>
+        <Image source={require('../Assets/arrow-left.png')}/>
+        </View>
             <View style={styles.vericontaintext}>
                 <Text style={styles.veri}>
                 Verification
@@ -21,14 +21,18 @@ const FifthScreen = () => {
             </View>
             <View style={styles.inputContainer}>
                 <View style={styles.inputWithIcon}>
-                    <TextInput style={styles.otpInput} placeholder="-" maxLength={1} keyboardType="numeric" />
-                    <TextInput style={styles.otpInput} placeholder="-" maxLength={1} keyboardType="numeric" />
+                    <TextInput style={styles.otpInput} placeholder="4" maxLength={1} keyboardType="numeric" />
+                    <TextInput style={styles.otpInput} placeholder="4" maxLength={1} keyboardType="numeric" />
                     <TextInput style={styles.otpInput} placeholder="-" maxLength={1} keyboardType="numeric" />
                     <TextInput style={styles.otpInput} placeholder="-" maxLength={1} keyboardType="numeric" />
                 </View>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('SeventhScreen')}>
                         <Text style={styles.loginText}>VERIFY</Text>
+                        <View style={styles.arrowContainer}>
+            <Image source={require('../Assets/signuparrowoow.png')}/>
+            
+          </View>
                     </TouchableOpacity>
                 </View>
                 <View style={{flexDirection:'row',marginTop:24,marginLeft:114}}>
@@ -106,19 +110,19 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     loginButton: {
-        width: '70%',
-        height: 50,
+        width: 271,
+    height: 58,
         backgroundColor: '#5669FF',
         borderRadius: 15,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: '#6F7DC8',
-        shadowOffset: { width: 0, height: 10 },
-        paddingRight: 35,
+       
+        paddingRight: 20,
         shadowOpacity: 0.25,
-        marginLeft: 60,
+        marginLeft: 27,
         position: 'relative',
-    },
+      },
     loginText: {
         color: 'white',
         fontSize: 16,
@@ -127,4 +131,11 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase',
         letterSpacing: 1,
     },
+    arrowContainer: {
+        position: 'absolute',
+        right: 20, 
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      
 });

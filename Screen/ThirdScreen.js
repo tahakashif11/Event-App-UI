@@ -80,8 +80,7 @@ const ThirdScreen = ({Navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    width:375,
-    height:812,
+    flex:1,
     backgroundColor: 'white',
     paddingLeft: 21,
     paddingRight:29,
@@ -159,7 +158,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   orContainer: {
-    marginTop:40,
+    marginTop:30,
     marginLeft: 120,
   },
   orText: {
@@ -214,12 +213,13 @@ const styles = StyleSheet.create({
   },
   lastline: {
     flexDirection: 'row',
-    paddingLeft: 20,
-    paddingTop: 0,
+    paddingLeft: 30,
+    paddingBottom:3
   },
   arrowtop:{
     paddingTop:11,
     paddingBottom:15,
+
   }
 });
 export default ThirdScreen;
